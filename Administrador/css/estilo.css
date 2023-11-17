@@ -177,11 +177,7 @@ obligatorio {
     #user {
     border-radius: 7px;
     }
-  
-  #caja {
-    margin-left: 5%
-  }
-  
+
   texto {
     font-family: times, serif; font-size:14pt; font-style:italic;
     color: black;

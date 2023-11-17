@@ -53,17 +53,7 @@
         if (obligatorio==="no") {
           alert("Faltan campos por rellenar.");
         } else {
-
-
-
-
-
-
           var respuesta = confirm("Seguro que desea enviar el informe?\n\nResponsable: " + responsable + "\nFecha: " + fecha1 + " de " + fecha2 + " del " + fecha3 + "\n" + turno + "\nAfluencia: " + afluencia + "\nRevisitas: " + revisitas + "\nLibros: " + libros + "\nTratados: " + tratados + "\nFolletos: " + folletos + "\nVideos Presentados: " + videospresentados + "\nVideos Enlaces: " + enlacevideos + "\nInvitaciónes: " + invitaciones + "\nTarjetas JW: " + tarjetajw + "\nRevistas: " + revistas + "\nCursos Biblicos: " + cursobiblico + "\nConversaciones: " + conversaciones + "\nComentarios: " + caja + "\nExperiencias: " + experiencia);
-
-
-
-
 
           if (respuesta == true) {
             myDataRef.push( {
@@ -185,7 +175,7 @@
                     </select></td>
                 </tr>
                 <tr>
-                  <td><label for="radio">Afluencia </label></td>
+                  <td><label for="radio">Afluencia (Aproximado)</label></td>
                   <td>
                     <input type="range" name="rad" id="afluencia" min="0" max="100" value="0">
                     <output name="xrad" id="vrad"></output>
