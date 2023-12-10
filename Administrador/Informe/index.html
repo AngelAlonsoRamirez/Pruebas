@@ -1,4 +1,6 @@
-<html><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <title>PPOC Telde Sur</title>
       <link href='https://ppocteldesur.github.io/Img/logo.png' rel='shortcut icon' type='image/png'>
     <meta charset="utf-8">
@@ -50,7 +52,7 @@ tr:nth-child(even) {
           </div>
           
           <div class="w3-col m6 w3-padding-large">
-            <select id="fecha1">
+            <select class="w3-select w3-border w3-sand" id="fecha1" style="width:100px">
               <option value="Enero">Enero</option> 
               <option value="Febrero">Febrero</option> 
               <option value="Marzo">Marzo</option>
@@ -65,22 +67,16 @@ tr:nth-child(even) {
               <option value="Diciembre">Diciembre</option> 
            </select>
            
-           <select id="fecha2">
-              <option value="2018">2018</option> 
-              <option value="2019">2019</option> 
-              <option value="2020">2020</option> 
-              <option value="2021">2021</option> 
-              <option value="2022">2022</option> 
-              <option value="2023">2023</option> 
-              <option value="2024">2024</option> 
-              <option value="2025">2025</option> 
-              <option value="2026">2026</option> 
-              <option value="2027">2027</option> 
-              <option value="2028">2028</option> 
-              <option value="2029">2029</option> 
-              <option value="2030">2030</option> 
-           </select>
-            <input type="submit" value="Mostrar" onclick="activar();">  
+              <select class="w3-select w3-border w3-sand" id="fecha2" style="width:100px">
+                <option value="0" disabled selected></option>
+                <script>
+                for (var i = 2018; i <= 2030; i++) {
+                  document.write('<option value="' + i + '">' + i + '</option>');
+                }
+                </script>
+              </select>
+
+            <input type="submit" class="w3-border" style="padding: 5px;" value="Mostrar" onclick="activar();">  
             <br><br>
            
            <div class="example-base example-leaderboard">
@@ -99,7 +95,7 @@ tr:nth-child(even) {
                  <th>Revistas</th>
                  <th>Folletos</th>
                  <th>Cursos Biblicos</th>
-                 <th>Afluencias</th>
+                 <th>Afluencias (Aprox)</th>
                  <th>Conversaciones</th>
            
                  <th>Comentarios</th>
