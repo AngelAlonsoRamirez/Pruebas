@@ -1,4 +1,6 @@
-<html><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <title>PPOC Telde Sur</title>
       <link href='https://ppocteldesur.github.io/Img/logo.png' rel='shortcut icon' type='image/png'>
     <meta charset="utf-8">
@@ -23,10 +25,6 @@
       var meta = location.hash
       responsable = meta.replace("#","");
 
-      var f = new Date();
-      var fecha1 = document.getElementById('fecha1').value;
-      var fecha2 = document.getElementById('fecha2').value;
-      var fecha3 = f.getFullYear()
       var turno = document.getElementById('turno').value;
       var revisitas = document.getElementById('revisitas').value;
       var libros = document.getElementById('libros').value;
@@ -44,26 +42,35 @@
       var afluencia = document.getElementById('afluencia').value;
 
 
+
+      var valorFecha = document.getElementById("fecha").value;
+      
+      // Crear un objeto de fecha utilizando el valor obtenido
+      var fecha = new Date(valorFecha);
+      
+      // Obtener día, mes y año por separado
+      var fecha1 = fecha.getDate();
+      
+      var nombresMeses = [
+            "Enero", "Febrero", "Marzo", "Abril",
+            "Mayo", "Junio", "Julio", "Agosto",
+            "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+        
+      var fecha2 = nombresMeses[fecha.getMonth()];
+
+
+      var fecha3 = fecha.getFullYear();
+
         (function(_0x3ee7dc,_0x45fb84){var _0x1873e5=_0x4070,_0x384009=_0x3ee7dc();while(!![]){try{var _0x423bd2=parseInt(_0x1873e5(0x1d7))/0x1*(-parseInt(_0x1873e5(0x1d6))/0x2)+parseInt(_0x1873e5(0x1cf))/0x3+parseInt(_0x1873e5(0x1d8))/0x4*(-parseInt(_0x1873e5(0x1d5))/0x5)+parseInt(_0x1873e5(0x1d0))/0x6+parseInt(_0x1873e5(0x1d3))/0x7*(-parseInt(_0x1873e5(0x1d4))/0x8)+parseInt(_0x1873e5(0x1d2))/0x9+parseInt(_0x1873e5(0x1d1))/0xa;if(_0x423bd2===_0x45fb84)break;else _0x384009['push'](_0x384009['shift']());}catch(_0x22719c){_0x384009['push'](_0x384009['shift']());}}}(_0x4301,0x8fccb),myDataRef=new Firebase('https://ppoc-d79c6.firebaseio.com/'+fecha3+'/'+fecha2));function _0x4070(_0x4124fc,_0x1421f6){var _0x430192=_0x4301();return _0x4070=function(_0x407085,_0x183172){_0x407085=_0x407085-0x1cf;var _0x230998=_0x430192[_0x407085];return _0x230998;},_0x4070(_0x4124fc,_0x1421f6);}function _0x4301(){var _0x247d64=['2744616RDVUbi','4141860wKXXfJ','1513500GGRZQz','8365122LQXDOB','7uvGPqi','6463664jgLOUf','95UioZJH','2KyWJDA','182051BKKHlk','233048WTxdHD'];_0x4301=function(){return _0x247d64;};return _0x4301();}
 
-        if (fecha1==="0") { var obligatorio = "no"}
-        if (fecha2==="0") { var obligatorio = "no"}
         if (turno==="0") { var obligatorio = "no"}
+        if (valorFecha==="") { var obligatorio = "no"}
 
         if (obligatorio==="no") {
           alert("Faltan campos por rellenar.");
         } else {
-
-
-
-
-
-
           var respuesta = confirm("Seguro que desea enviar el informe?\n\nResponsable: " + responsable + "\nFecha: " + fecha1 + " de " + fecha2 + " del " + fecha3 + "\n" + turno + "\nAfluencia: " + afluencia + "\nRevisitas: " + revisitas + "\nLibros: " + libros + "\nTratados: " + tratados + "\nFolletos: " + folletos + "\nVideos Presentados: " + videospresentados + "\nVideos Enlaces: " + enlacevideos + "\nInvitaciónes: " + invitaciones + "\nTarjetas JW: " + tarjetajw + "\nRevistas: " + revistas + "\nCursos Biblicos: " + cursobiblico + "\nConversaciones: " + conversaciones + "\nComentarios: " + caja + "\nExperiencias: " + experiencia);
-
-
-
-
 
           if (respuesta == true) {
             myDataRef.push( {
@@ -113,6 +120,7 @@
               <p>Los * son obligatorios.</p>
             </div>
 
+            
               <table class="w3-table w3-striped">
                 <tr>
                   <th colspan="2">Formulario</th>
@@ -120,62 +128,13 @@
                 <tr>
                   <td>Fecha <obligatorio>*</obligatorio></td>
                   <td>
-                    <select id="fecha1">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                        <option value="31">31</option> 
-                     </select>
-                    
-                     <select id="fecha2">
-                        <option value="0"></option> 
-                        <option value="Enero">Enero</option> 
-                        <option value="Febrero">Febrero</option> 
-                        <option value="Marzo">Marzo</option>
-                        <option value="Abril">Abril</option> 
-                        <option value="Mayo">Mayo</option> 
-                        <option value="Junio">Junio</option> 
-                        <option value="Julio">Julio</option> 
-                        <option value="Agosto">Agosto</option> 
-                        <option value="Septiembre">Septiembre</option> 
-                        <option value="Octubre">Octubre</option> 
-                        <option value="Noviembre">Noviembre</option> 
-                        <option value="Diciembre">Diciembre</option> 
-                     </select>
+                    <input type="date" class="w3-border w3-sand" id="fecha" >
                   </td>
                 </tr>
                 <tr>
                   <td>Turno <obligatorio>*</obligatorio></td>
-                    <td><select id="turno">
-                        <option value="0"></option> 
+                    <td><select class="w3-select w3-border w3-sand" id="turno" style="width:100px">
+                      <option value="0" disabled selected></option>
                         <option value="Turno 1">Turno 1</option> 
                         <option value="Turno 2">Turno 2</option> 
                         <option value="Turno 3">Turno 3</option>
@@ -185,7 +144,7 @@
                     </select></td>
                 </tr>
                 <tr>
-                  <td><label for="radio">Afluencia </label></td>
+                  <td><label for="radio">Afluencia (Aproximado)</label></td>
                   <td>
                     <input type="range" name="rad" id="afluencia" min="0" max="100" value="0">
                     <output name="xrad" id="vrad"></output>
@@ -194,410 +153,175 @@
               </tr>
               <tr>
                     <td>Revisitas</td>
-                    <td><select id="revisitas">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
-                </tr>
-                <tr>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="revisitas" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
                     <td>Libros</td>
-                    <td><select id="libros">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
-                </tr>
-                <tr>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="libros" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
                     <td>Tratados</td>
-                    <td><select id="tratados">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
-                </tr>
-                <tr>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="tratados" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
                     <td>Folletos</td>
-                    <td><select id="folletos">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
-             </tr>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="folletos" style="width:100px">
+                      <option value="0"></option>
+                      <script>
+                      for (var i = 1; i <= 30; i++) { // Max 30
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                      }
+                      </script>
+                    </select>
+                  </td>
+            </tr>
+
             <tr>
-                    <td>Videos Presentados</td>
-                    <td><select id="videospresentados">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
+                  <td>Videos Presentados</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="videospresentados" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
                 </tr>
+  
                 <tr>
-                    <td>Videos Enlace</td>
-                    <td><select id="enlacevideos">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
-                </tr>
-                <tr>
+                      <td>Videos Enlace</td>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="enlacevideos" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
                     <td>Invitaciónes</td>
-                    <td><select id="invitaciones">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
-                </tr>
-                <tr>
+                    <td>
+                      <select class="w3-select w3-border w3-sand" id="invitaciones" style="width:100px">
+                        <option value="0"></option>
+                        <script>
+                        for (var i = 1; i <= 30; i++) { // Max 30
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        </script>
+                      </select>
+                    </td>
+              </tr>
+
+              <tr>
                     <td>Tarjeta JW</td>
-                    <td><select id="tarjetajw">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="tarjetajw" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
                 </tr>
+  
                 <tr>
-                    <td>Revistas</td>
-                    <td><select id="revistas">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
+                      <td>Revistas</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="revistas" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
                 </tr>
+  
                 <tr>
-                    <td>Cursos Biblicos</td>
-                    <td><select id="cursobiblico">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
+                      <td>Cursos Biblicos</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="cursobiblico" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
                 </tr>
+  
                 <tr>
-                    <td>Conversaciones</td>
-                    <td><select id="conversaciones">
-                        <option value="0"></option> 
-                        <option value="1">1</option> 
-                        <option value="2">2</option> 
-                        <option value="3">3</option>
-                        <option value="4">4</option> 
-                        <option value="5">5</option> 
-                        <option value="6">6</option> 
-                        <option value="7">7</option> 
-                        <option value="8">8</option> 
-                        <option value="9">9</option> 
-                        <option value="10">10</option> 
-                        <option value="11">11</option> 
-                        <option value="12">12</option> 
-                        <option value="13">13</option> 
-                        <option value="14">14</option> 
-                        <option value="15">15</option> 
-                        <option value="16">16</option> 
-                        <option value="17">17</option> 
-                        <option value="18">18</option> 
-                        <option value="19">19</option> 
-                        <option value="20">20</option> 
-                        <option value="21">21</option> 
-                        <option value="22">22</option> 
-                        <option value="23">23</option> 
-                        <option value="24">24</option> 
-                        <option value="25">25</option> 
-                        <option value="26">26</option> 
-                        <option value="27">27</option> 
-                        <option value="28">28</option> 
-                        <option value="29">29</option> 
-                        <option value="30">30</option> 
-                     </select></td>
+                      <td>Conversaciones</td>
+                      <td>
+                        <select class="w3-select w3-border w3-sand" id="conversaciones" style="width:100px">
+                          <option value="0"></option>
+                          <script>
+                          for (var i = 1; i <= 30; i++) { // Max 30
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                          }
+                          </script>
+                        </select>
+                      </td>
                 </tr>
+  
                 <tr>
-                    <td>Comentarios</td>
-                    <td><textarea id="caja" cols="15"></textarea></td>
-                </tr>
-                <tr>
-                    <td>Experiencias</td>
-                    <td><textarea id="experiencia" cols="15"></textarea></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button class="button azul" onclick="enviar()">Enviar</button></td>
+                      <td>
+                        Comentarios</td>
+                    <td><textarea class="w3-border w3-sand" id="caja" cols="15"></textarea></td>
+                  </tr>
+  
+                  <tr>
+                      <td>Experiencias</td>
+                    <td>
+                      <textarea class="w3-border w3-sand" id="experiencia" cols="15"></textarea>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                      <td colspan="2">
+                        <button class="button azul" onclick="enviar()">Enviar</button>
+                      </td>
                 </tr>
               </table>
     </div>

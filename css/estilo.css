@@ -3,9 +3,22 @@
   margin: 0;
 }
 
+input {
+  padding-left: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+textarea {
+  padding-left: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
 obligatorio {
 color: red;
 }
+
 p {
   margin-bottom: 20px;
 }
@@ -178,13 +191,8 @@ tr:nth-child(even) {
   border-radius: 7px;
   }
 
-#caja {
-  margin-left: 5%
-}
-
 texto {
   font-family: times, serif; font-size:14pt; font-style:italic;
   color: black;
   size: 50px
-
 }
